@@ -1,0 +1,122 @@
+.skills {
+  @media (min-width: 576px) {
+    padding: $gap-sm;
+  }
+  @media (max-width: 575.8px) {
+    padding: $gap;
+  }
+
+  &__container {
+    display: grid;
+    margin-bottom: $gap;
+
+    @media (min-height: 691px) {
+      grid-auto-rows: calc(33.33333vh - 13.3333333333px);
+    }
+    @media (max-height: 690px) {
+      grid-auto-rows: calc(230px - 13.3333333333px);
+    }
+
+    @media (min-width: 992px) {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas:
+        'a1 a1 a2 a3'
+        'a4 a5 a5 a6'
+        'a7 a8 a9 a6';
+    }
+    @media (max-width: 991.8px) and (min-width: 768px) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas:
+        'a1 a1 a2'
+        'a3 a4 a4'
+        'a5 a5 a6'
+        'a7 a8 a6'
+        'a7 a9 a9';
+    }
+    @media (max-width: 767.8px) and (min-width: 576px) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: 'a1 a2' 'a3 a2' 'a4 a4' 'a5 a6' 'a5 a7' 'a8 a9';
+    }
+    @media (min-width: 575.8px) {
+      gap: $gap-sm;
+    }
+    @media (max-width: 575.8px) {
+      gap: $gap;
+      grid-template-areas: 'a1' 'a2' 'a3' 'a4' 'a5' 'a6' 'a7' 'a8' 'a9';
+    }
+  }
+
+  &__buttons {
+    @media (min-width: 576px) {
+      margin-bottom: $gap-lg;
+    }
+  }
+}
+.skills-item {
+  position: relative;
+  padding: $gap;
+  overflow: hidden;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+
+  &__title {
+    @include abs-position;
+    z-index: 1;
+    margin: 0;
+    letter-spacing: 0.1em;
+    @media (min-width: 768px) {
+      font-size: 1.25rem;
+    }
+    @media (max-width: 767.8px) {
+      font-size: 1.125rem;
+    }
+  }
+  &__link {
+    padding: $gap;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    font-size: 1.25rem;
+    letter-spacing: 0.1em;
+    color: $color-white;
+    transition: color 0.5s;
+  }
+
+  $counter: 9;
+
+  @for $i from 1 through $counter {
+    &:nth-of-type(#{$i}) {
+      grid-area: a#{$i};
+    }
+  }
+
+  &__img {
+    background-color: $color-primary;
+    background-position: center;
+    background-size: cover;
+    transition: transform 0.5s;
+    @include abs-position;
+  }
+
+  &__overlay {
+    background-color: $color-primary;
+    opacity: 0.8;
+    transition: opacity 0.5s;
+    @include abs-position;
+  }
+  &:hover {
+    .skills-item__link {
+      color: $color-accent;
+    }
+    .skills-item__overlay {
+      opacity: 0.95;
+    }
+    .skills-item__img {
+      transform: scale(1.1);
+    }
+  }
+}

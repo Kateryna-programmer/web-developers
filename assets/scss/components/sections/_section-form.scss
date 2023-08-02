@@ -1,0 +1,55 @@
+.form {
+  padding: 30px 0;
+  background-color: $color-primary;
+
+  &__container {
+    display: grid;
+    gap: $gap;
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: 767.8px) and (min-width: 576px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  .btn--primary {
+    width: 100%;
+    color: $color-white;
+    border-color: rgba($color-white, 0);
+    border-bottom-color: rgba($color-white, 0.2);
+    background-color: rgba($color-white, 0.1);
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      border-color: $color-white;
+      background-color: $color-accent;
+    }
+  }
+}
+.form-item {
+  &__input {
+    display: block;
+    width: 100%;
+    height: $gap-x3;
+    padding-right: $gap-lg;
+    padding-left: $gap-lg;
+    font-size: 1.125rem;
+    letter-spacing: 0.15em;
+    color: $color-white;
+    border: 2px solid rgba($color-white, 0);
+    border-bottom-color: rgba($color-white, 0.25);
+    background-color: rgba($color-white, 0.05);
+    transition: background-color 0.5s, border-color 0.5s;
+    &:hover,
+    &:focus {
+      border-color: rgba($color-white, 0.15);
+      border-bottom-color: $color-white;
+      background-color: rgba($color-white, 0.15);
+    }
+  }
+  &:nth-of-type(1) {
+    @media (max-width: 767.8px) and (min-width: 576px) {
+      grid-column: 1 / span 2;
+    }
+  }
+}

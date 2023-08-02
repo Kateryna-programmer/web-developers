@@ -1,0 +1,91 @@
+.header-content__container,
+.header-menu__container,
+.about__container,
+.form__container,
+.posts__container,
+.footer__container {
+  @extend %container;
+}
+.hidden {
+  @include visually-hidden;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.5em 1em;
+
+  transition: background-color 0.5s, border-color 0.5s, opacity 0.5s;
+  letter-spacing: 0.1em;
+
+  border-width: 2px;
+  border-style: solid;
+
+  font-weight: 400;
+
+  &:hover,
+  &:focus {
+    background-color: $color-accent;
+  }
+}
+
+.skills__buttons,
+.posts__buttons {
+  display: flex;
+  justify-content: center;
+}
+.btn--light {
+  border-color: $color-white;
+  background-color: rgba($color-white, 0.1);
+
+  @media (min-width: 992px) {
+    min-width: 250px;
+    min-height: 60px;
+
+    font-size: 1.125rem;
+  }
+  @media (max-width: 991.8px) and (min-width: 768px) {
+    min-width: 200px;
+    min-height: 50px;
+  }
+  @media (max-width: 767.8px) {
+    min-width: 170px;
+    min-height: 40px;
+  }
+}
+.btn--primary {
+  min-height: 60px;
+
+  border-color: $color-primary;
+  background-color: rgba($color-primary, 0.8);
+
+  font-size: 1.125rem;
+
+  @media (min-width: 576px) {
+    min-width: 350px;
+  }
+  @media (max-width: 575.8px) {
+    min-width: 100%;
+  }
+}
+.about,
+.posts {
+  @media (min-width: 992px) {
+    padding-top: $gap-x5;
+    padding-bottom: $gap-x5;
+  }
+  @media (max-width: 991.8px) and (min-width: 768px) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  @media (max-width: 767.8px) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+.about h2,
+.posts h2 {
+  margin-top: 0;
+}
