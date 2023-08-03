@@ -8,6 +8,7 @@
 
   &__container {
     display: grid;
+
     margin-bottom: $gap;
 
     @media (min-height: 691px) {
@@ -18,26 +19,26 @@
     }
 
     @media (min-width: 992px) {
-      grid-template-columns: repeat(4, 1fr);
       grid-template-areas:
         'a1 a1 a2 a3'
         'a4 a5 a5 a6'
         'a7 a8 a9 a6';
+      grid-template-columns: repeat(4, 1fr);
     }
     @media (max-width: 991.8px) and (min-width: 768px) {
-      grid-template-columns: repeat(3, 1fr);
       grid-template-areas:
         'a1 a1 a2'
         'a3 a4 a4'
         'a5 a5 a6'
         'a7 a8 a6'
         'a7 a9 a9';
+      grid-template-columns: repeat(3, 1fr);
     }
     @media (max-width: 767.8px) and (min-width: 576px) {
-      grid-template-columns: 1fr 1fr;
       grid-template-areas: 'a1 a2' 'a3 a2' 'a4 a4' 'a5 a6' 'a5 a7' 'a8 a9';
+      grid-template-columns: 1fr 1fr;
     }
-    @media (min-width: 575.8px) {
+    @media (min-width: 576px) {
       gap: $gap-sm;
     }
     @media (max-width: 575.8px) {
@@ -54,17 +55,23 @@
 }
 .skills-item {
   position: relative;
-  padding: $gap;
-  overflow: hidden;
+
   display: grid;
-  justify-items: center;
+  overflow: hidden;
   align-items: center;
 
+  padding: $gap;
+
+  justify-items: center;
+
   &__title {
-    @include abs-position;
     z-index: 1;
+
     margin: 0;
+
     letter-spacing: 0.1em;
+
+    @include abs-position;
     @media (min-width: 768px) {
       font-size: 1.25rem;
     }
@@ -73,39 +80,73 @@
     }
   }
   &__link {
-    padding: $gap;
-
     display: flex;
     align-items: center;
     justify-content: center;
+
     height: 100%;
+    padding: $gap;
+
+    transition: color 0.5s;
+    letter-spacing: 0.1em;
+
+    color: $color-white;
 
     font-size: 1.25rem;
-    letter-spacing: 0.1em;
-    color: $color-white;
-    transition: color 0.5s;
   }
 
-  $counter: 9;
+  &:nth-of-type(1) {
+    grid-area: a1;
+  }
 
-  @for $i from 1 through $counter {
-    &:nth-of-type(#{$i}) {
-      grid-area: a#{$i};
-    }
+  &:nth-of-type(2) {
+    grid-area: a2;
+  }
+
+  &:nth-of-type(3) {
+    grid-area: a3;
+  }
+
+  &:nth-of-type(4) {
+    grid-area: a4;
+  }
+
+  &:nth-of-type(5) {
+    grid-area: a5;
+  }
+
+  &:nth-of-type(6) {
+    grid-area: a6;
+  }
+
+  &:nth-of-type(7) {
+    grid-area: a7;
+  }
+
+  &:nth-of-type(8) {
+    grid-area: a8;
+  }
+
+  &:nth-of-type(9) {
+    grid-area: a9;
   }
 
   &__img {
+    transition: transform 0.5s;
+
     background-color: $color-primary;
     background-position: center;
     background-size: cover;
-    transition: transform 0.5s;
+
     @include abs-position;
   }
 
   &__overlay {
-    background-color: $color-primary;
-    opacity: 0.8;
     transition: opacity 0.5s;
+
+    opacity: 0.8;
+    background-color: $color-primary;
+
     @include abs-position;
   }
   &:hover {

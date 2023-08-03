@@ -39,7 +39,7 @@ h2 {
 
   color: $color-primary;
 
-  font-family: "Roboto Slab", serif;
+  font-family: 'Roboto Slab', serif;
   line-height: 1.2em;
 
   @media (min-width: 992px) {
@@ -75,4 +75,7 @@ h3 {
   color: $color-gray;
 
   font-size: 1.125rem;
+}
+input:focus {
+  outline: none;
 }

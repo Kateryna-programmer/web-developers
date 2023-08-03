@@ -6,6 +6,7 @@
 .footer__container {
   @extend %container;
 }
+
 .hidden {
   @include visually-hidden;
 }
@@ -33,8 +34,10 @@
 
 .skills__buttons,
 .posts__buttons {
-  display: flex;
-  justify-content: center;
+  @media (min-width: 576px) {
+    display: flex;
+    justify-content: center;
+  }
 }
 .btn--light {
   border-color: $color-white;

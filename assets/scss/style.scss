@@ -1,14 +1,14 @@
-@import "../../libs/normalize.css/normalize.css";
-@import "presets/skin";
-@import "presets/variables";
-@import "mixins/mixins";
-@import "mixins/extends";
-@import "common/typography";
-@import "common/general-classes";
+@import '../../libs/normalize.css/normalize';
+@import 'presets/skin';
+@import 'presets/variables';
+@import 'mixins/mixins';
+@import 'mixins/extends';
+@import 'common/typography';
+@import 'common/general-classes';
 
-@import "components/header/header";
-@import "components/sections/section-skills";
-@import "components/sections/section-about";
-@import "components/sections/section-form";
-@import "components/sections/section-posts";
-@import "components/footer/footer";
+@import 'components/header/header';
+@import 'components/sections/section-skills';
+@import 'components/sections/section-about';
+@import 'components/sections/section-form';
+@import 'components/sections/section-posts';
+@import 'components/footer/footer';
