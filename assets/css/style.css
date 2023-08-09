@@ -510,8 +510,6 @@ input:focus {
   letter-spacing: 0.1em;
 
   color: #ffffff;
-
-  font-size: 1.25rem;
 }
 .skills-item:nth-of-type(1) {
   grid-area: a1;
@@ -632,6 +630,7 @@ input:focus {
 }
 .form .btn--primary {
   width: 100%;
+  min-width: auto;
 
   color: #ffffff;
   border-color: rgba(255, 255, 255, 0);
